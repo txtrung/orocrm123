@@ -1,0 +1,24 @@
+MCM\DemoBundle\Entity\PointCardPlus:
+    type: entity
+    table: Plus_PointCard
+    id:
+        id:
+            type: integer
+            id: true
+            generator:
+                strategy: AUTO
+    fields:
+        cusId:
+            type: integer
+            column: cus_id
+        pointCardId:
+            type: integer
+            column: PointCard_id
+        amount:
+            type: integer
+        reason:
+            type: string
+            length: 255
+        time:
+            type: datetime
+    lifecycleCallbacks: {  }

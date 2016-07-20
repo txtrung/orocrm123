@@ -1,0 +1,29 @@
+MCM\DemoBundle\Entity\PointCard:
+    type: entity
+    table: null
+    id:
+        id:
+            type: integer
+            id: true
+            generator:
+                strategy: AUTO
+    fields:
+        cusId:
+            type: integer
+            column: cus_id
+        channelId:
+            type: integer
+            column: channel_id
+        integrationChannelId:
+            type: integer
+            column: integration_channel_id
+        ownerId:
+            type: integer
+            column: owner_id
+        type:
+            type: string
+            length: 255
+        status:
+            type: string
+            length: 255
+    lifecycleCallbacks: {  }

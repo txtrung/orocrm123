@@ -1,0 +1,76 @@
+mcm_demo_homepage:
+    path:     /hello/{name}
+    defaults: { _controller: MCMDemoBundle:Default:index }
+mcm_demo_user_all:
+    path:  /users
+    defaults: { _controller: MCMDemoBundle:Default:all, _format: ~ }
+    requirements:
+        _method: GET
+mcm_demo_user_get:
+    path:  /users/{id}
+    defaults: { _controller: MCMDemoBundle:Default:get, _format: json }
+    requirements:
+        _method: GET
+        id: "\d+"
+mcm_demo_user_new:
+    path:  /users
+    defaults: { _controller: MCMDemoBundle:Default:new, _format: ~ }
+    requirements:
+        _method: POST
+mcm_demo_user_update:
+    path:  /users/{update}
+    defaults:  { _controller: MCMDemoBundle:Default:update, _format: ~}
+    requirements:
+        _method: POST
+        update: "^(update)$"
+mcm_demo_customer_get:
+    path: /customers/{id}
+    defaults: { _controller: MCMDemoBundle:InforCustomer:getIdentityCus, _format: ~}
+    requirements:
+        _method: GET
+        id: "\d+"
+mcm_demo_cart_get:
+    path: /carts/{id}
+    defaults: { _controller: MCMDemoBundle:InforCart:getCartCus, _format: ~}
+    requirements:
+        _method: GET
+        id: "\d+"
+mcm_demo_order_get:
+    path: /orders/{id}
+    defaults: { _controller: MCMDemoBundle:InforOrder:getOrderCus, _format: ~}
+    requirements:
+        _method: GET
+        id: "\d+"
+mcm_demo_news_get:
+    path: /news/{id}
+    defaults: { _controller: MCMDemoBundle:InforNewLetter:getInforNewLetter, _format: ~}
+    requirements:
+        _method: GET
+        id: "\d+"
+mcm_demo_track_get:
+    path: /tracks/{customerId}
+    defaults: { _controller: MCMDemoBundle:InforTracking:getTracking, _format: ~}
+    requirements:
+            _method: GET
+            customerId: "\d+"
+mcm_demo_point_get:
+    path: /points/{id}
+    defaults: { _controller: MCMDemoBundle:InforPoint:getPoint, _format: ~}
+    requirements:
+            _method: GET
+            id: "\d+"
+mcm_demo_point_use:
+    path: /points/uses/{id}
+    defaults: { _controller: MCMDemoBundle:InforPoint:getPointUsed, _format: ~}
+    requirements:
+            _method: GET
+            id: "\d+"
+mcm_demo_point_plus:
+    path: /points/pluses/{id}
+    defaults: { _controller: MCMDemoBundle:InforPoint:getPointPlused, _format: ~}
+    requirements:
+            _method: GET
+            id: "\d+"
+mcm_demo_account_import:
+    path: /account/import
+    defaults: { _controller: MCMDemoBundle:ExcelConvert:import, _format: ~}
